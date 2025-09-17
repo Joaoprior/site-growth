@@ -1,108 +1,177 @@
-/* mobile.css */
-
-/* Reset */
-body, h1, h2, h3, p, ul, li, figure, figcaption {
+/* Reset básico para mobile */
+* {
     margin: 0;
     padding: 0;
-    list-style: none;
+    box-sizing: border-box;
 }
 
+/* Layout principal */
 body {
     color: white;
     font-family: "PT Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    
-}
-
-header {
-    text-align: center;
-    padding: 10px;
-    background: #f8f8f8;
-}
-
-header h1 img {
-    width: 100%;
-    height: auto;
-}
-
-.menu-opcoes ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.menu-opcoes a {
-    text-decoration: none;
-    color: #333;
+    background-color: #000; /* ajuste se precisar */
 }
 
 .container {
-    padding: 20px;
-}
-
-.container .destaque {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.container .busca, .container .menu-departamentos {
+    margin: 10px auto;
     width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    position: relative;
 }
 
-.container .banner-destaque img {
+/* Carrinho */
+.carrinho-de-compras {
+    background: url(../img/carrinho-de-compras.png) no-repeat center right;
+    font-size: 12px;
+    padding: 50px 10px 10px 10px;
+    text-align: right;
+    width: auto;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    left: auto;
+}
+
+/* Menu de opções */
+.menu-opcoes {
+    position: relative;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.menu-opcoes ul {
+    list-style: none;
+}
+
+.menu-opcoes ul li {
+    display: inline-block;
+    margin: 5px 10px;
+    width: auto;
+}
+
+.menu-opcoes a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Busca e menu departamentos */
+.busca,
+.menu-departamentos {
+    background-color: black;
+    font-weight: bold;
+    text-transform: uppercase;
     width: 100%;
-    height: auto;
+    margin-bottom: 10px;
+    float: none;
+    padding: 10px;
 }
 
-.paineis {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.busca input[type=search] {
+    width: 100%;
+    padding: 6px;
+}
+
+/* Painéis */
+.painel {
+    margin: 20px 0;
+    padding: 15px;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px #000000 inset, 1px 1px 4px #B22222;
+    background: linear-gradient(#b81616, black);
 }
 
 .painel h2 {
+    font-size: 20px;
     text-align: center;
     margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
 }
 
-.painel ol {
-    display: flex;
-    flex-direction: column;
+.painel ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas no mobile */
     gap: 10px;
 }
 
 .painel li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.painel figure {
+    display: block;
+    width: 100%;
     margin: 0;
-}
-
-.painel img {
-    width: 100px;
-    height: auto;
-}
-
-footer {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
     text-align: center;
-    padding: 20px;
-    background: #f8f8f8;
+    transition: 0.3s;
 }
 
-footer .social {
+.painel li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: url(../img/rodape.jpeg) no-repeat center center;
+    background-size: cover;
+    padding: 20px 10px;
+    color: white;
+    text-align: center;
+}
+
+.social {
+    margin-top: 15px;
+}
+
+.social ul {
+    list-style: none;
+    padding: 0;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-footer .social a {
-    text-decoration: none;
-    color: #333;
+.social a {
+    height: 32px;
+    width: 32px;
+    display: block;
+    text-indent: -9999px;
+    background-size: cover;
 }
+
+/* Ícones sociais */
+.social a[href*="facebook.com"] {
+    background-image: url(../img/facebook.jpeg);
+}
+.social a[href*="twitter.com"] {
+    background-image: url(../img/twitter.jpeg);
+}
+.social a[href*="plus.google.com"] {
+    background-image: url(../img/Google+.jpeg);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .painel ul {
+        grid-template-columns: 1fr; /* 1 coluna em telas bem pequenas */
+    }
+
+    .menu-opcoes ul li {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .carrinho-de-compras {
+        position: static;
+        margin: 0 auto 20px auto;
+        display: block;
+        text-align: center;
+    }
+}
+
 
