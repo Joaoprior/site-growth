@@ -8,8 +8,9 @@ body, h1, h2, h3, p, ul, li, figure, figcaption {
 }
 
 body {
-    font-family: 'PT Sans', sans-serif;
-    line-height: 1.5;
+    color: white;
+    font-family: "PT Sans", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    
 }
 
 header {
@@ -104,3 +105,4 @@ footer .social a {
     text-decoration: none;
     color: #333;
 }
+
