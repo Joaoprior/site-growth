@@ -13,8 +13,11 @@
     display: inline;
     margin-left: 180px;
 }   width:100px;
-    
-	
+
+.menu-opcoes.active {
+    display: block;
+}
+   	
 	
 .menu-opcoes {
     position: absolute;
@@ -312,4 +315,5 @@ body:hover {
 .painel button:hover::after {
     border-top-color: #393939;
 }
+
 
