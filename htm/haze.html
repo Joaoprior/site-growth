@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto - PRÉ-TREINO HAZE HARDCORE</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/produto.css">
+    <link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)">
+</head>
+<body>
+    <?php include("cabecalho.php"); ?>
+    <?php include("rodape.php"); ?>
+    <?php include("header.php"); ?>
+
+    <div class="produto-back">
+        <div class="container">
+            <div class="produto">
+                <h1>PRÉ-TREINO HAZE HARDCORE 300G</h1>
+                <p>por apenas R$ 103,50</p>
+
+                <form action="checkout.html" method="post">
+                    <fieldset class="cores">
+                        <legend>Escolha o sabor:</legend>
+
+                        <input type="radio" name="sabor" value="laranja" id="laranja">
+                        <label for="laranja">
+                            <img src="img/hazelaranja.webp" alt="laranja">
+                        </label>
+
+                        <input type="radio" name="sabor" value="limao" id="limao" checked>
+                        <label for="limao">
+                            <img src="img/hazelimao.webp" alt="limao">
+                        </label>
+
+                        <input type="radio" name="sabor" value="tutti-frutti" id="tutti-frutti">
+                        <label for="tutti-frutti">
+                            <img src="img/tutti.webp" alt="tutti-frutti">
+                        </label>
+                    </fieldset>
+
+                    <input type="submit" class="comprar" value="Comprar">
+
+                    <input type="hidden" name="nome" value="HAZE">
+                    <input type="hidden" name="preco" value="103,50">
+                    <input type="hidden" name="imagem" id="imagem">
+                </form>
+            </div>
+            <div class="detalhes">
+                <h2>Detalhes do produto</h2>
+                <p>Ele promove mudança nos seus níveis de energia e disposição, utilizando uma combinação de nutrientes para que seu corpo seja levado a um nível superior.
+
+                    O HAZE auxilia você a subir de nível, progredir e avançar diariamente em busca do resultado que deseja.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Características</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BENEFÍCIOS</td>
+                            <td>MUITO MAIS ENERGIA E DISPOSIÇÃO PARA OS TREINOS<br>
+                                MAIOR DESEMPENHO FÍSICO EM ATIVIDADES DE ALTA INTENSIDADE<br>
+                                MELHORA DO DESEMPENHO, SEJA PARA GANHAR MASSA MAGRA OU EMAGRECER<br>
+                                FONTE DE BETA-ALANINA, AUXILIA NA PREVENÇÃO DA FADIGA MUSCULAR
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Material</td>
+                            <td>Isomaltulose (palatinose™), beta-alanina, arginina, taurina, D-ribose, tirosina, cafeína,
+                                aroma idêntico ao natural, acidulante ácido cítrico, e corante sucralose.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sabores</td>
+                            <td>laranja, limao e tutti-frutti</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <?php include("footer.php"); ?>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('input[name="sabor"]').on('change', function() {
+                var sabor = $(this).val();
+                var imgPath = '';
+
+                if (sabor === 'laranja') {
+                    imgPath = 'img/hazelaranja.webp';
+                } else if (sabor === 'limao') {
+                    imgPath = 'img/hazelimao.webp';
+                } else if (sabor === 'tutti-frutti') {
+                    imgPath = 'img/tutti.webp';
+                }
+
+                $('#imagem').val(imgPath);
+            });
+
+            // Trigger change event on page load to set the default image
+            $('input[name="sabor"]:checked').trigger('change');
+        });
+    </script>
+    
+    <script>
+        // Function to change form action based on selected flavor
+        function redirecionarCheckout(event) {
+            var saborSelecionado = document.querySelector('input[name="sabor"]:checked').value;
+            var checkoutURL;
+
+            // Define the checkout URLs for each flavor here
+            switch(saborSelecionado) {
+                case "laranja":
+                    checkoutURL = "checkout_hazelaranja.html";
+                    break;
+                case "limao":
+                    checkoutURL = "checkout_hazelimao.html";
+                    break;
+                case "tutti-frutti":
+                    checkoutURL = "checkout_hazetutti-frutti.html";
+                    break;
+                default:
+                    checkoutURL = "checkout.html"; // Default checkout page
+            }
+
+            // Redirect to the appropriate checkout page
+            document.querySelector('form').action = checkoutURL;
+        }
+
+        // Add a click event to the buy button to call the redirection function
+        document.querySelector('.comprar').addEventListener('click', redirecionarCheckout);
+    </script>
+</body>
+</html>
+

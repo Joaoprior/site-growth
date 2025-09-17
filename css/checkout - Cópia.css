@@ -1,0 +1,7 @@
+.form-control:invalid {
+    outline: 1px solid #CC0000;
+}
+
+.navbar {
+    margin: 0;
+}

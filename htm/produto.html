@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Compra Growth</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width"/>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/estilos.css">
+   <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="css/produto.css">
+    <link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Produto - Whey Protein</title>
+</head>
+<body>
+    <?php include("cabecalho.php"); ?>
+    <?php include("rodape.php"); ?>
+    <?php include("header.php"); ?>
+
+    <div class="produto-back">
+        <div class="container">
+            <div class="produto">
+                <h1>WHEY PROTEIN CONCENTRADO (1KG)</h1>
+                <p>por apenas R$ 99,00</p>
+
+                <form action="checkout.html" method="post">
+                    <fieldset class="cores">
+                        <legend>Escolha o sabor:</legend>
+
+                        <input type="radio" name="sabor" value="chocolate" id="chocolate" checked>
+                        <label for="chocolate">
+                            <img src="img/wheychocolate.jpg" alt="chocolate">
+                        </label>
+
+                        <input type="radio" name="sabor" value="morango" id="morango">
+                        <label for="morango">
+                            <img src="img/wheymorango.webp" alt="morango">
+                        </label>
+
+                        <input type="radio" name="sabor" value="baunilha" id="baunilha">
+                        <label for="baunilha">
+                            <img src="img/wheybaunilha.webp" alt="baunilha">
+                        </label>
+                    </fieldset>
+
+                    <input type="submit" class="comprar" value="Comprar">
+
+                    <input type="hidden" name="nome" value="WHEY PROTEIN">
+                    <input type="hidden" name="preco" value="99,00">
+                    <input type="hidden" name="imagem" id="imagem">
+                </form>
+            </div>
+            <div class="detalhes">
+                <h2>Detalhes do produto</h2>
+                <p>Whey protein Growth fornece proteínas para quem deseja hipertrofia e definição muscular.
+                    Ideal porque é um suplemento de alto valor biológico com grande concentração de proteínas 
+                    e aminoácidos essenciais é também rico em Glutamina, BCAA (incluindo Leucina).</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Caracteristicas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BENEFÍCIOS</td>
+                            <td>Possui rápida digestibilidade e absorção intestinal;
+                                Fornece energia; Age no sistema imunológico;
+                                Atua como antioxidante e aumenta a concentração de insulina plasmática para melhor captação 
+                                dos nutrientes para o interior da célula muscular; As concentrações de aminoácidos, como 
+                                leucina, ajudam a estimular a síntese proteica e favorecem a recuperação muscular.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Material</td>
+                            <td>O whey protein é um suplemento fabricado a partir do soro do leite (em inglês, “whey”),
+                                um subproduto resultante da fabricação de queijos por coagulação da caseína. Possui alto 
+                                valor nutricional devido à presença de proteínas com 
+                                elevado teor de aminoácidos essenciais.</td>
+                        </tr>
+                        <tr>
+                            <td>Sabores</td>
+                            <td>Chocolate, Morango e Baunilha</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <?php include("footer.php"); ?>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('input[name="sabor"]').on('change', function() {
+                var sabor = $(this).val();
+                var imgPath = '';
+
+                if (sabor === 'chocolate') {
+                    imgPath = 'img/wheychocolate.jpg';
+                } else if (sabor === 'morango') {
+                    imgPath = 'img/wheymorango.webp';
+                } else if (sabor === 'baunilha') {
+                    imgPath = 'img/wheybaunilha.webp';
+                }
+
+                $('#imagem').val(imgPath);
+            });
+
+            // Trigger change event on page load to set the default image
+            $('input[name="sabor"]:checked').trigger('change');
+        });
+    </script>
+	
+	<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Seus metadados, links CSS e scripts aqui -->
+</head>
+<body>
+    <!-- Seu conteúdo HTML aqui -->
+
+    <script>
+        // Função para alterar a ação do formulário com base no sabor selecionado
+        function redirecionarCheckout() {
+            var saborSelecionado = document.querySelector('input[name="sabor"]:checked').value;
+            var checkoutURL;
+
+            // Defina os URLs de checkout para cada sabor aqui
+            switch(saborSelecionado) {
+                case "chocolate":
+                    checkoutURL = "checkout_chocolate.html";
+                    break;
+                case "morango":
+                    checkoutURL = "checkout_morango.html";
+                    break;
+                case "baunilha":
+                    checkoutURL = "checkout_baunilha.html";
+                    break;
+                default:
+                    checkoutURL = "checkout.html"; // Página de checkout padrão
+            }
+
+            // Redirecionar para a página de checkout apropriada
+            document.querySelector('form').action = checkoutURL;
+        }
+
+        // Adicionar um evento de clique ao botão de comprar para chamar a função de redirecionamento
+        document.querySelector('.comprar').addEventListener('click', redirecionarCheckout);
+    </script>
+</body>
+</html>
+
+	
+</body>
+</html>

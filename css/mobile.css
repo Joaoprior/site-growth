@@ -1,0 +1,106 @@
+/* mobile.css */
+
+/* Reset */
+body, h1, h2, h3, p, ul, li, figure, figcaption {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    line-height: 1.5;
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+    background: #f8f8f8;
+}
+
+header h1 img {
+    width: 100%;
+    height: auto;
+}
+
+.menu-opcoes ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-opcoes a {
+    text-decoration: none;
+    color: #333;
+}
+
+.container {
+    padding: 20px;
+}
+
+.container .destaque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.container .busca, .container .menu-departamentos {
+    width: 100%;
+}
+
+.container .banner-destaque img {
+    width: 100%;
+    height: auto;
+}
+
+.paineis {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.painel h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.painel ol {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.painel li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.painel figure {
+    margin: 0;
+}
+
+.painel img {
+    width: 100px;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f8f8f8;
+}
+
+footer .social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .social a {
+    text-decoration: none;
+    color: #333;
+}

@@ -1,0 +1,36 @@
+.form-control:invalid {
+    outline: 1px solid #CC0000;
+	} 
+	
+
+.navbar {
+    margin: 0;
+}
+	
+	  <style>
+        .jumbotron {
+            margin-bottom: 0;
+            padding: 2rem 1rem;
+        }
+        .card-body dl {
+            margin-bottom: 0;
+        }
+        .card img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .navbar-nav {
+            flex-direction: row;
+        }
+        .navbar-nav .nav-item {
+            margin-left: 10px;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .container .row > [class*='col-'] {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    </style>
